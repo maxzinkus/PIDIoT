@@ -49,11 +49,11 @@ int main() {
       }
       printf("nhashes: %zu\n", filter.nhashes);
       for (size_t j = 0; j < INPUTS; j++) {
-         if (j < i*K || j >= (i+1)*K) {
+         if (j < (size_t)i*K || j >= (size_t)(i+1)*K) {
             bloom_add(&filter, in[j]);
          }
       }
-      for (size_t j = i*K; j < (i+1)*K; j++) {
+      for (size_t j = i*K; j < (size_t)(i+1)*K; j++) {
          if (!bloom_contains(&filter, in[j])) {
             (fa[i])++;
          }
