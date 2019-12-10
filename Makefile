@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-Wall -Werror -O2 -std=c11 -flto
+CFLAGS=-Wall -Werror -Wextra -Wpedantic -Os -std=c11
 TARGETS=test1 test2 test3 test4 test5
 DEPS=Bloom.o Buffer.o Murmur3.o
 
